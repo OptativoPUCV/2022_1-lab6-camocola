@@ -111,6 +111,7 @@ int is_valid(Node* n)
       int i=3*(k/3) + (p/3);
       int j=3*(k%3) + (p%3);
       int numero = n->sudo[i][j];
+      printf("sudo [%d][%d] = %d\n", i, j, numero);
       if (numero != 0)
       {
         if (histograma[numero] == 0)
@@ -156,7 +157,7 @@ List* get_adj_nodes(Node* n){
     {
       Node* nuevoNodo = copy(n);
       nuevoNodo->sudo[indiceI][indiceJ] = i;
-      if (is_valid(nuevoNodo) == 1);
+      if (is_valid(nuevoNodo) == 1)
       {
         pushBack(list, nuevoNodo);
       }
