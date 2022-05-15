@@ -173,6 +173,39 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  //1. Cree un stack S (pila) e inserte el nodo.
+  Stack* stack = createStack();
+  push(stack, initial);
+
+  //2. Mientras el stack S no se encuentre vacío:
+  while (is_empty(stack) != 0)
+  {
+    //a) Saque y elimine el primer nodo de S.
+    Node* nodo = top(stack);
+    pop(stack);
+
+    // b) Verifique si corresponde a un estado final, si es así retorne el nodo.
+    if (is_final(nodo) == 1)
+    {
+      return nodo;
+    }
+    else
+    {
+      //    c) Obtenga la lista de nodos adyacentes al nodo.
+      List* nodosAdyacentes = get_adj_nodes(nodo);
+      //    d) Agregue los nodos de la lista (uno por uno) al stack S.
+      Node* nodoLista = first(nodosAdyacentes);
+      while (nodoLista != NULL)
+      {
+        push(stack, nodoLista);
+        nodoLista = next(nodosAdyacentes);
+      }
+
+    }
+  }
+//    e) Libere la memoria usada por el nodo.
+   
+// 3. Si terminó de recorre el grafo sin encontrar una solución, retorne NULL.
   return NULL;
 }
 
