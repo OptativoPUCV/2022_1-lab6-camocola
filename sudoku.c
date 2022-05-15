@@ -58,6 +58,7 @@ List* get_adj_nodes(Node* n){
     {
       for(int j=0; j < 9; j++)
       {
+        printf ("sudo[%d][%d] = %d", i, j, n->sudo[i][j]);
         if (n->sudo[i][j] == 0)
         {
           indiceI = i;
