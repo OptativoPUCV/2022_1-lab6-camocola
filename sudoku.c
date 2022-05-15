@@ -54,9 +54,9 @@ List* get_adj_nodes(Node* n){
     //buscar indice primera casilla vacía
     int indiceI = -1;
     int indiceJ = -1;
-    for(int j=0; j < 9; j++)
+    for(int i=0; i < 9; i++)
     {
-      for(int i=0; i < 9; i++)
+      for(int j=0; j < 9; j++)
       {
         if (n->sudo[i][j] == 0)
         {
@@ -66,6 +66,7 @@ List* get_adj_nodes(Node* n){
         }
       }
     }
+    printf("indice i = %d, indice j = %d", indiceI, indiceJ);
     for (int i=1; i < 10; i++)
     {
       Node* nuevoNodo = copy(n);
