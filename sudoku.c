@@ -111,7 +111,7 @@ int is_valid(Node* n)
       int i=3*(k/3) + (p/3);
       int j=3*(k%3) + (p%3);
       int numero = n->sudo[i][j];
-      printf("sudo [%d][%d] = %d\n", i, j, numero);
+      //printf("sudo [%d][%d] = %d\n", i, j, numero);
       if (numero != 0)
       {
         if (histograma[numero] == 0)
