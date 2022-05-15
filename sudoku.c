@@ -203,7 +203,7 @@ Node* DFS(Node* initial, int* cont){
       }
 
     }
-    *cont++;
+    (*cont)++;
   }
 //    e) Libere la memoria usada por el nodo.
    
