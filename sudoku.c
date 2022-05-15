@@ -44,9 +44,59 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+void limpiarArreglo (int* arreglo, int tamano)
+{
+  for (int i =0; i < tamano; i++)
+  {
+    arreglo[i] = 0;
+  }
+}
 
-    return 1;
+int is_valid(Node* n)
+{
+  int histograma[9];
+  limpiarArreglo(histograma, 9);
+
+  //No se repitan números en las filas
+  for (int i =0; i < 9; i++)
+  {
+    limpiarArreglo(histograma, 9);
+    for (int j =0; j < 9; j++)
+    {
+      int casilleroActual = n->sudo[i][j];
+      if (histograma[casilleroActual] == 0)
+      {
+        histograma[casilleroActual] = 1;
+      }
+      else
+      {
+        //el numero no es valido
+        return 0;
+      }
+    }
+  }
+  
+  //No se repitan números en las columnas
+  for (int j =0; j < 9; j++)
+  {
+    limpiarArreglo(histograma, 9);
+    for (int i =0; i < 9; i++)
+    {
+      int casilleroActual = n->sudo[i][j];
+      if (histograma[casilleroActual] == 0)
+      {
+        histograma[casilleroActual] = 1;
+      }
+      else
+      {
+        //el numero no es valido
+        return 0;
+      }
+    }
+  }
+  //No se repitan números en las submatrices de 3x3
+
+  return 1;
 }
 
 bool buscarCasillaVacia(Node* n, int* indiceI, int* indiceJ)
@@ -73,7 +123,6 @@ List* get_adj_nodes(Node* n){
     int indiceI = -1;
     int indiceJ = -1;
     if (buscarCasillaVacia(n, &indiceI, &indiceJ) == false) return list;
-    printf("indice i = %d, indice j = %d\n", indiceI, indiceJ);
     for (int i=1; i < 10; i++)
     {
       Node* nuevoNodo = copy(n);
