@@ -111,7 +111,6 @@ int is_valid(Node* n)
       int i=3*(k/3) + (p/3);
       int j=3*(k%3) + (p%3);
       int numero = n->sudo[i][j];
-      //printf("sudo [%d][%d] = %d\n", i, j, numero);
       if (numero != 0)
       {
         if (histograma[numero] == 0)
@@ -167,7 +166,10 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-    return 0;
+  int indiceI = 0;
+  int indiceJ = 0;
+  if (buscarCasillaVacia(n, &indiceI, &indiceJ) == false) return 1;
+  return 0;
 }
 
 Node* DFS(Node* initial, int* cont){
