@@ -58,7 +58,7 @@ List* get_adj_nodes(Node* n){
     {
       for(int j=0; j < 9; j++)
       {
-        printf ("sudo[%d][%d] = %d", i, j, n->sudo[i][j]);
+        printf ("sudo[%d][%d] = %d\n", i, j, n->sudo[i][j]);
         if (n->sudo[i][j] == 0)
         {
           indiceI = i;
@@ -67,7 +67,7 @@ List* get_adj_nodes(Node* n){
         }
       }
     }
-    printf("indice i = %d, indice j = %d", indiceI, indiceJ);
+    printf("indice i = %d, indice j = %d\n", indiceI, indiceJ);
     for (int i=1; i < 10; i++)
     {
       Node* nuevoNodo = copy(n);
