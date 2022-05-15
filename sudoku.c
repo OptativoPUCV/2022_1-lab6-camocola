@@ -178,14 +178,14 @@ Node* DFS(Node* initial, int* cont){
   push(stack, initial);
 
   //2. Mientras el stack S no se encuentre vacío:
-  while (is_empty(stack) != 0)
+  while (is_empty(stack) == 0)
   {
     //a) Saque y elimine el primer nodo de S.
     Node* nodo = top(stack);
     pop(stack);
 
     // b) Verifique si corresponde a un estado final, si es así retorne el nodo.
-    print_node(nodo);
+    //print_node(nodo);
     if (is_final(nodo) == 1)
     {
       return nodo;
