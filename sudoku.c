@@ -54,8 +54,8 @@ void limpiarArreglo (int* arreglo, int tamano)
 
 int is_valid(Node* n)
 {
-  int histograma[9];
-  limpiarArreglo(histograma, 9);
+  int histograma[10];
+  limpiarArreglo(histograma, 10);
 
   //No se repitan números en las filas
   for (int i =0; i < 9; i++)
