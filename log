@@ -90,3 +90,17 @@ Sun, May 15, 2022 12:59:31 PM:
  tests:  5|3
 total_score: 35/70
 91334de
+Sun, May 15, 2022  1:03:01 PM: 
+ sudoku.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:159:7: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+       if (is_valid(nuevoNodo) == 1);
+       ^~
+sudoku.c:160:7: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+       {
+       ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+67b0aa5
