@@ -63,34 +63,40 @@ int is_valid(Node* n)
     limpiarArreglo(histograma, 9);
     for (int j =0; j < 9; j++)
     {
-      int casilleroActual = n->sudo[i][j];
-      if (histograma[casilleroActual] == 0)
+      int numero = n->sudo[i][j];
+      if (numero != 0)
       {
-        histograma[casilleroActual] = 1;
-      }
-      else
-      {
-        //el numero no es valido
-        return 0;
+        if (histograma[numero] == 0)
+        {
+          histograma[numero] = 1;
+        }
+        else
+        {
+          //el numero no es valido
+          return 0;
+        }
       }
     }
   }
-  
+
   //No se repitan números en las columnas
   for (int j =0; j < 9; j++)
   {
     limpiarArreglo(histograma, 9);
     for (int i =0; i < 9; i++)
     {
-      int casilleroActual = n->sudo[i][j];
-      if (histograma[casilleroActual] == 0)
+      int numero = n->sudo[i][j];
+      if (numero != 0)
       {
-        histograma[casilleroActual] = 1;
-      }
-      else
-      {
-        //el numero no es valido
-        return 0;
+        if (histograma[numero] == 0)
+        {
+          histograma[numero] = 1;
+        }
+        else
+        {
+          //el numero no es valido
+          return 0;
+        }
       }
     }
   }
