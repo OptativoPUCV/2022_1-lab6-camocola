@@ -185,7 +185,6 @@ Node* DFS(Node* initial, int* cont){
     pop(stack);
 
     // b) Verifique si corresponde a un estado final, si es así retorne el nodo.
-    //print_node(nodo);
     if (is_final(nodo) == 1)
     {
       return nodo;
@@ -205,8 +204,6 @@ Node* DFS(Node* initial, int* cont){
     }
     (*cont)++;
   }
-//    e) Libere la memoria usada por el nodo.
-   
 // 3. Si terminó de recorre el grafo sin encontrar una solución, retorne NULL.
   return NULL;
 }
