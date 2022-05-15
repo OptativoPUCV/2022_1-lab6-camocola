@@ -60,7 +60,7 @@ int is_valid(Node* n)
   //No se repitan números en las filas
   for (int i =0; i < 9; i++)
   {
-    limpiarArreglo(histograma, 9);
+    limpiarArreglo(histograma, 10);
     for (int j =0; j < 9; j++)
     {
       int numero = n->sudo[i][j];
@@ -82,7 +82,7 @@ int is_valid(Node* n)
   //No se repitan números en las columnas
   for (int j =0; j < 9; j++)
   {
-    limpiarArreglo(histograma, 9);
+    limpiarArreglo(histograma, 10);
     for (int i =0; i < 9; i++)
     {
       int numero = n->sudo[i][j];
