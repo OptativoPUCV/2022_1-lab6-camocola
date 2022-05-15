@@ -28,3 +28,23 @@ Sun, May 15, 2022 11:42:31 AM:
  tests:  0|5
 total_score: 0/70
 3fe925b
+Sun, May 15, 2022 11:50:31 AM: 
+ sudoku.c | 24 +++++++++++++++---------
+ 1 file changed, 15 insertions(+), 9 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:75:27: error: passing argument 2 of 'buscarCasillaVacia' makes pointer from integer without a cast [-Werror=int-conversion]
+     buscarCasillaVacia(n, indiceI, indiceJ);
+                           ^~~~~~~
+sudoku.c:52:6: note: expected 'int *' but argument is of type 'int'
+ bool buscarCasillaVacia(Node* n, int* indiceI, int* indiceJ)
+      ^~~~~~~~~~~~~~~~~~
+sudoku.c:75:36: error: passing argument 3 of 'buscarCasillaVacia' makes pointer from integer without a cast [-Werror=int-conversion]
+     buscarCasillaVacia(n, indiceI, indiceJ);
+                                    ^~~~~~~
+sudoku.c:52:6: note: expected 'int *' but argument is of type 'int'
+ bool buscarCasillaVacia(Node* n, int* indiceI, int* indiceJ)
+      ^~~~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+332d5b4

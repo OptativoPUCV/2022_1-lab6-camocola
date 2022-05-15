@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include <stdbool.h>
 
 
 typedef struct{
@@ -48,25 +49,30 @@ int is_valid(Node* n){
     return 1;
 }
 
+bool buscarCasillaVacia(Node* n, int* indiceI, int* indiceJ)
+{
+  //buscar indice primera casilla vacía
+  for(int i=0; i < 9; i++)
+  {
+    for(int j=0; j < 9; j++)
+    {
+      if (n->sudo[i][j] == 0)
+      {
+        *indiceI = i;
+        *indiceJ = j;
+        return true;
+      }
+    }
+  }
+  return false;
+}
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
     //buscar indice primera casilla vacía
     int indiceI = -1;
     int indiceJ = -1;
-    for(int i=0; i < 9; i++)
-    {
-      for(int j=0; j < 9; j++)
-      {
-        printf ("sudo[%d][%d] = %d\n", i, j, n->sudo[i][j]);
-        if (n->sudo[i][j] == 0)
-        {
-          indiceI = i;
-          indiceJ = j;
-          break;
-        }
-      }
-    }
+    buscarCasillaVacia(n, indiceI, indiceJ);
     printf("indice i = %d, indice j = %d\n", indiceI, indiceJ);
     for (int i=1; i < 10; i++)
     {
