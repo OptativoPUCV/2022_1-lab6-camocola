@@ -100,8 +100,31 @@ int is_valid(Node* n)
       }
     }
   }
-  //No se repitan números en las submatrices de 3x3
 
+  //No se repitan números en las submatrices de 3x3
+  for (int k =0; k < 9; k++)
+  {
+    limpiarArreglo(histograma, 10);
+    int p; 
+    for(p=0;p<9;p++)
+    {
+      int i=3*(k/3) + (p/3);
+      int j=3*(k%3) + (p%3);
+      int numero = n->sudo[i][j];
+      if (numero != 0)
+      {
+        if (histograma[numero] == 0)
+        {
+          histograma[numero] = 1;
+        }
+        else
+        {
+          //el numero no es valido
+          return 0;
+        }
+      }
+    }
+  }
   return 1;
 }
 
