@@ -72,7 +72,7 @@ List* get_adj_nodes(Node* n){
     //buscar indice primera casilla vacía
     int indiceI = -1;
     int indiceJ = -1;
-    buscarCasillaVacia(n, indiceI, indiceJ);
+    buscarCasillaVacia(n, &indiceI, &indiceJ);
     printf("indice i = %d, indice j = %d\n", indiceI, indiceJ);
     for (int i=1; i < 10; i++)
     {
